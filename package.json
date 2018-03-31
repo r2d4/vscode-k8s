@@ -3,7 +3,7 @@
     "displayName": "k8s",
     "description": "Kubernetes Developer Tools",
     "version": "0.0.1",
-    "publisher": "r2d4",
+    "publisher": "kubernetes-tools",
     "engines": {
         "vscode": "^1.21.0"
     },
@@ -45,14 +45,38 @@
         "commands": [
             {
                 "command": "k8s.skaffoldRun",
-                "title": "K8s: skaffold run",
+                "title": "skaffold run",
                 "description": "Run skaffold",
                 "category": "K8s"
             },
             {
                 "command": "k8s.skaffoldDev",
-                "title": "K8s: skaffold dev",
+                "title": "skaffold dev",
                 "description": "Run skaffold dev",
+                "category": "K8s"
+            },
+            {
+                "command": "k8s.minikubeStart",
+                "title": "start local cluster",
+                "description": "Starts a minikube cluster",
+                "category": "K8s"
+            },
+            {
+                "command": "k8s.minikubeStop",
+                "title": "stop local cluster",
+                "description": "Stops a minikube cluster",
+                "category": "K8s"
+            },
+            {
+                "command": "k8s.minikubeDelete",
+                "title": "delete local cluster",
+                "description": "Deletes a minikube cluster",
+                "category": "K8s"
+            },
+            {
+                "command": "k8s.minikubeStatus",
+                "title": "cluster status",
+                "description": "Gets minikube cluster status",
                 "category": "K8s"
             }
         ]
