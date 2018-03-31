@@ -11,14 +11,49 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:k8s.skaffoldRun"
+        "onCommand:k8s.skaffoldRun",
+        "onLanguage:yaml"
     ],
     "main": "./out/extension",
     "contributes": {
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "resourceFilename =~ /[Ss]kaffold/",
+                    "command": "k8s.skaffoldRun",
+                    "group": "skaffold"
+                },
+                {
+                    "when": "resourceFilename =~ /[Ss]kaffold/",
+                    "command": "k8s.skaffoldDev",
+                    "group": "skaffold"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "when": "resourceFilename =~ /[Ss]kaffold/",
+                    "command": "k8s.skaffoldRun",
+                    "group": "skaffold"
+                },
+                {
+                    "when": "resourceFilename =~ /[Ss]kaffold/",
+                    "command": "k8s.skaffoldDev",
+                    "group": "skaffold"
+                }
+            ]
+        },
         "commands": [
             {
                 "command": "k8s.skaffoldRun",
-                "title": "Skaffold Run"
+                "title": "K8s: skaffold run",
+                "description": "Run skaffold",
+                "category": "K8s"
+            },
+            {
+                "command": "k8s.skaffoldDev",
+                "title": "K8s: skaffold dev",
+                "description": "Run skaffold dev",
+                "category": "K8s"
             }
         ]
     },

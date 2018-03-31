@@ -1,10 +1,7 @@
+'use strict';
 import * as vscode from 'vscode';
+import * as util from "./util";
 
-// import cp = require('child_process');
-
-
-export function skaffoldRun() {
-    const terminal = vscode.window.createTerminal(`shell: skaffold run`);
-    terminal.sendText(`skaffold run`);
-    terminal.show()
+export function skaffoldRun(skaffoldFileUri?: vscode.Uri) {
+    util.runSkaffold("run", skaffoldFileUri);
 }
